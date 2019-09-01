@@ -40,6 +40,17 @@
             <h1><br/>Hello, my name is <b>Oliver</b>.<br/>This is my website.</h1>
           </div>
         </div><!--/row-->
+                <div class="row">
+          <button id="button-id">Click Me</button>
+<script>
+document.getElementById('button-id').onclick = function(){
+	var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+    xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
+    xhttp.send("Hello from GitHub");
+    }
+</script>
+          </div>
       </div><!--/container-->
        <div class="container centered">
         <div class="row">
