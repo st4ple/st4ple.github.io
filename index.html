@@ -48,43 +48,33 @@
 		<script>
 			document.getElementById('beer').onclick = function(){
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "https://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
 				xhttp.send("beer");
 			}
 			document.getElementById('wine').onclick = function(){
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "https://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
 				xhttp.send("wine");
 			}
 			document.getElementById('cocktail').onclick = function(){
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "https://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
 				xhttp.send("cocktail");
 			}
 			document.getElementById('water').onclick = function(){
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "https://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
 				xhttp.send("water");
 			}
 			document.getElementById('main').onload = function(){
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "https://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				if ("geolocation" in navigator) {
-					navigator.geolocation.getCurrentPosition(function(position) {
-						var latitude = position.coords.latitude;
-					        var longitude = position.coords.longitude;
-					});
-			      	}
-				else {
-					var latitude = null;
-					var longitude = null;
-				}
-				xhttp.send('userAgent="'+navigator.userAgent+'" language="'+navigator.language+'" latitude="'+latitude+'" longitude="'+longitude+'"');
+				xhttp.send('userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
 			}
 		</script>
           </div>
