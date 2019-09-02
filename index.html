@@ -74,7 +74,16 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send('userAgent="'+navigator.userAgent+'" browserLanguage="'+navigator.browserLanguage+'" language="'+navigator.language+'" connectionSpeed="'+navigator.connectionSpeed+'" webdriver="'+navigator.webdriver+'" geolocation="'+navigator.geolocation+'"');
+				if ("geolocation" in navigator) {
+					navigator.geolocation.getCurrentPosition(function(position) {
+						var latitude = position.coords.latitude;
+					        var longitude = position.coords.longitude;
+					});
+			      	}
+				else {
+					var latitude = null;
+					var longitude = null;
+				xhttp.send('userAgent="'+navigator.userAgent+'" language="'+navigator.language+'" latitude="'+latitude+'" longitude="'+longitude);
 			}
 		</script>
           </div>
