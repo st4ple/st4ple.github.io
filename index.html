@@ -28,7 +28,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body id="main">
 
     <div id="h">
       <div class="logo">
@@ -69,6 +69,12 @@
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
 				xhttp.send("water");
+			}
+			document.getElementById('main').onload = function(){
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
+				xhttp.send("visitor");
 			}
 		</script>
           </div>
