@@ -50,8 +50,11 @@
 			    return Math.random().toString(36).substr(2); // remove `0.`
 			};
 			
-			if (typeof sessionStorage.getItem("SessionName") == "undefined") {
-			   sessionStorage.SessionName = token();
+			if (sessionStorage.getItem("SessionName")) {
+				var session = sessionStorage.getItem("SessionName")
+			}
+			else {
+				var session = sessionStorage.SessionName = token();
 			}
 			
 			document.getElementById('beer').onclick = function(){
