@@ -82,7 +82,7 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send('userSession="'+sessionStorage.SessionName+'" userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
+				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
 			}
 		</script>
           </div>
