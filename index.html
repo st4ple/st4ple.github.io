@@ -46,35 +46,43 @@
 		<button id="cocktail">Cocktail</button>
 		<button id="water">Water</button>
 		<script>
+			var token = function() {
+			    return Math.random().toString(36).substr(2); // remove `0.`
+			};
+			
+			if (typeof sessionStorage.getItem("SessionName") == "undefined") {
+			   sessionStorage.SessionName = token();
+			}
+			
 			document.getElementById('beer').onclick = function(){
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send("beer");
+				xhttp.send("drink=beer price=5");
 			}
 			document.getElementById('wine').onclick = function(){
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send("wine");
+				xhttp.send("drink=wine price=6");
 			}
 			document.getElementById('cocktail').onclick = function(){
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send("cocktail");
+				xhttp.send("drink=cocktail price=10");
 			}
 			document.getElementById('water').onclick = function(){
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send("water");
+				xhttp.send("drink=water price=2");
 			}
 			document.getElementById('main').onload = function(){
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1");
-				xhttp.send('userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
+				xhttp.send('userSession="'+sessionStorage.SessionName+'" userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
 			}
 		</script>
           </div>
