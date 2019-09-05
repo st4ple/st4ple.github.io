@@ -178,6 +178,7 @@
 				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", splunkToken);
 				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" message="'+message+'"');
+				document.getElementById("message").value = '';
 			}
 		}
 	</script>
