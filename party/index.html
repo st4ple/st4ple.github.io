@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="DATA Mavericks">
+    <title>#splunkomania</title>
+
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="custom.css" rel="stylesheet">
+  </head>
+  <body id="main" class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">#splunkomania</h3>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover "">
+    <h1 class="cover-heading">Order your Drink!</h1>
+    <p class="lead">Click on or tap any of the cards below to order your virtual drink @ #splunkomania.</p>
+    <p class="lead">
+      <a id="beer" href="#" class="btn btn-lg btn-secondary"><img src="beer.png"/ height="100px"><br>Beer</a>
+      <a id="wine" href="#" class="btn btn-lg btn-secondary"><img src="wine.png"/ height="100px"><br>Wine</a>
+      <a id="cocktail" href="#" class="btn btn-lg btn-secondary"><img src="cocktail.png"/ height="100px"><br>Cocktail</a>
+      <a id="water" href="#" class="btn btn-lg btn-secondary"><img src="water.png"/ height="100px"><br>Water</a>
+    </p>
+    <p>&nbsp;</p>
+    <h1 class="cover-heading">Select your Mood!</h1>
+    <p class="lead">Click on or tap any of the emojis below to submit your current mood @ #splunkomania.</p>
+    <a id="dizzy" href="#" class="btn"><img src="dizzy.png"/ height="100px"></a>
+    <a id="drunk" href="#" class="btn"><img src="drunk.png"/ height="100px"></a>
+    <a id="exploding" href="#" class="btn"><img src="exploding.png"/ height="100px"></a>
+    <a id="upsidedown" href="#" class="btn"><img src="upsidedown.png"/ height="100px"></a>
+    <a id="hearteyes" href="#" class="btn"><img src="hearteyes.png"/ height="100px"></a>
+    <a id="grimace" href="#" class="btn"><img src="grimace.png"/ height="100px"></a>
+    <a id="nerd" href="#" class="btn"><img src="nerd.png"/ height="100px"></a>
+    <a id="smile" href="#" class="btn"><img src="smile.png"/ height="100px"></a>
+    <a id="stareyes" href="#" class="btn"><img src="stareyes.png"/ height="100px"></a>
+    <a id="thinking" href="#" class="btn"><img src="thinking.png"/ height="100px"></a>
+    <p>&nbsp;</p>
+    <h1 class="cover-heading">Share your thoughts!</h1>
+    <p class="lead">Tweet using the #splunkomania hashtag or enter your thoughts below to share them with the crowd.</p>
+	<a href="https://twitter.com/intent/tweet?button_hashtag=splunkomania&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false" data-size="large">Tweet #splunkomania</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<p>or</p>
+<div class="input-group mb-3 offset-md-3 col-md-6 " >
+  <input id="message" type="text" class="form-control" placeholder="you can also just enter your message here :)" aria-label="you can also just enter your message here :)" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button id="submit" class="btn btn-outline-secondary" type="button">Submit</button>
+  </div>
+</div>
+  </main>
+	<script>
+		var splunkToken = "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1";
+		var sessionToken = function() {
+			return Math.random().toString(36).substr(2);
+		};
+		
+		if (sessionStorage.getItem("SessionName")) {
+			var session = sessionStorage.getItem("SessionName")
+		}
+		else {
+			var session = sessionStorage.SessionName = sessionToken();
+		}
+		
+		document.getElementById('beer').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=beer price=5');
+		}
+		
+		document.getElementById('wine').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=wine price=6');
+		}
+		
+		document.getElementById('cocktail').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=cocktail price=10');
+		}
+		
+		document.getElementById('water').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=water price=2');
+		}
+		
+		document.getElementById('main').onload = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
+		}
+
+		document.getElementById('dizzy').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=dizzy');
+		}
+
+		document.getElementById('drunk').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=drunk');
+		}
+
+		document.getElementById('exploding').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=exploding');
+		}
+
+		document.getElementById('grimace').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=grimace');
+		}
+
+		document.getElementById('hearteyes').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=hearteyes');
+		}
+
+		document.getElementById('nerd').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=nerd');
+		}
+
+		document.getElementById('smile').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=smile');
+		}
+
+		document.getElementById('stareyes').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=stareyes');
+		}
+
+		document.getElementById('thinking').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=thinking');
+		}
+
+		document.getElementById('upsidedown').onclick = function(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.setRequestHeader("Authorization", splunkToken);
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=upsidedown');
+		}
+		document.getElementById('submit').onclick = function(){
+			var message = document.getElementById("message").value;
+			if (typeof message !== 'undefined'){
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.setRequestHeader("Authorization", splunkToken);
+				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" message="'+message+'"');
+			}
+		}
+	</script>
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>#splunkomania Party Dashboard input page for Splunk .conf by DATA Mavericks.</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
