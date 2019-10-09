@@ -69,105 +69,105 @@
 		
 		document.getElementById('beer').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=beer price=5');
 		}
 		
 		document.getElementById('wine').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=wine price=6');
 		}
 		
 		document.getElementById('cocktail').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=cocktail price=10');
 		}
 		
 		document.getElementById('water').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=water price=2');
 		}
 		
 		document.getElementById('main').onload = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" userAgent="'+navigator.userAgent+'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('dizzy').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=dizzy');
 		}
 
 		document.getElementById('drunk').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=drunk');
 		}
 
 		document.getElementById('exploding').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=exploding');
 		}
 
 		document.getElementById('grimace').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=grimace');
 		}
 
 		document.getElementById('hearteyes').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=hearteyes');
 		}
 
 		document.getElementById('nerd').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=nerd');
 		}
 
 		document.getElementById('smile').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=smile');
 		}
 
 		document.getElementById('stareyes').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=stareyes');
 		}
 
 		document.getElementById('thinking').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=thinking');
 		}
 
 		document.getElementById('upsidedown').onclick = function(){
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+			xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=upsidedown');
 		}
@@ -175,7 +175,7 @@
 			var message = document.getElementById("message").value;
 			if (typeof message !== 'undefined'){
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("POST", "http://185.207.213.68:8088/services/collector/raw", true);
+				xhttp.open("POST", "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw", true);
 				xhttp.setRequestHeader("Authorization", splunkToken);
 				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" message="'+message+'"');
 				document.getElementById("message").value = '';
