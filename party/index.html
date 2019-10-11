@@ -23,11 +23,11 @@
   <main role="main" class="inner cover "">
     <h1 class="cover-heading">Order your Drink!</h1>
     <p class="lead">Click on or tap any of the cards below to order your virtual drink @ #splunkomania.</p>
-    <p class="lead">
-      <button id="beer" class="btn btn-lg btn-primary"><img src="beer.png"/ height="100px"><br>Beer</button>
-      <button id="wine" class="btn btn-lg btn-primary"><img src="wine.png"/ height="100px"><br>Wine</button>
-      <button id="cocktail" class="btn btn-lg btn-primary"><img src="cocktail.png"/ height="100px"><br>Cocktail</button>
-      <button id="water" class="btn btn-lg btn-primary"><img src="water.png"/ height="100px"><br>Water</button>
+	<p class="lead">
+      <button id="beer" class="btn btn-lg btn-secondary"><img src="beer.png"/ height="100px"><br>Beer</button>
+      <button id="wine" class="btn btn-lg btn-secondary"><img src="wine.png"/ height="100px"><br>Wine</button>
+      <button id="cocktail" class="btn btn-lg btn-secondary"><img src="cocktail.png"/ height="100px"><br>Cocktail</button>
+      <button id="water" class="btn btn-lg btn-secondary"><img src="water.png"/ height="100px"><br>Water</button>
     </p>
     <p>&nbsp;</p>
     <h1 class="cover-heading">Select your Mood!</h1>
@@ -74,6 +74,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=beer price=5 language="'+navigator.language+'"');
+			alert("Drink ordered!");
 		}
 		
 		document.getElementById('wine').onclick = function(){
@@ -81,6 +82,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=wine price=6 language="'+navigator.language+'"');
+			alert("Drink ordered!");
 		}
 		
 		document.getElementById('cocktail').onclick = function(){
@@ -88,6 +90,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=cocktail price=10 language="'+navigator.language+'"');
+			alert("Drink ordered!");
 		}
 		
 		document.getElementById('water').onclick = function(){
@@ -95,6 +98,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=water price=2 language="'+navigator.language+'"');
+			alert("Drink ordered!");
 		}
 		
 		document.getElementById('main').onload = function(){
