@@ -8,17 +8,29 @@ a:focus,
 a:hover {
   color: #fff;
 }
+.btn-primary {
+  color: #000;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #333;
+  margin-top: 5px;
+}
 
 /* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn-secondary {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #333;
+  border: .05rem solid #333;
+  margin-top: 5px;
+}
+
+.btn-secondary:hover {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
   border: .05rem solid #fff;
   margin-top: 5px;
-
 }
 
 
