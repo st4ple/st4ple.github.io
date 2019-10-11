@@ -73,28 +73,28 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=beer price=5');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=beer price=5 +'" language="'+navigator.language+'"');
 		}
 		
 		document.getElementById('wine').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=wine price=6');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=wine price=6 +'" language="'+navigator.language+'"');
 		}
 		
 		document.getElementById('cocktail').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=cocktail price=10');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=cocktail price=10 +'" language="'+navigator.language+'"');
 		}
 		
 		document.getElementById('water').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=water price=2');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" drink=water price=2 +'" language="'+navigator.language+'"');
 		}
 		
 		document.getElementById('main').onload = function(){
@@ -108,70 +108,70 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=dizzy');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=dizzy +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('drunk').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=drunk');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=drunk +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('exploding').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=exploding');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=exploding +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('grimace').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=grimace');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=grimace +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('hearteyes').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=hearteyes');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=hearteyes +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('nerd').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=nerd');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=nerd +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('smile').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=smile');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=smile +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('stareyes').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=stareyes');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=stareyes +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('thinking').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=thinking');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=thinking +'" language="'+navigator.language+'"');
 		}
 
 		document.getElementById('upsidedown').onclick = function(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
-			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=upsidedown');
+			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=upsidedown +'" language="'+navigator.language+'"');
 		}
 		document.getElementById('submit').onclick = function(){
 			var message = document.getElementById("message").value;
@@ -179,7 +179,7 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("POST", url, true);
 				xhttp.setRequestHeader("Authorization", splunkToken);
-				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" message="'+message+'"');
+				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" message="'+message+'" +'" language="'+navigator.language+'"');
 				document.getElementById("message").value = '';
 			}
 		}
