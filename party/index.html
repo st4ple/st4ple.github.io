@@ -113,6 +113,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=dizzy language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('drunk').onclick = function(){
@@ -120,6 +121,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=drunk language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('exploding').onclick = function(){
@@ -127,6 +129,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=exploding language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('grimace').onclick = function(){
@@ -134,6 +137,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=grimace language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('hearteyes').onclick = function(){
@@ -141,6 +145,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=hearteyes language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('nerd').onclick = function(){
@@ -148,6 +153,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=nerd language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('smile').onclick = function(){
@@ -155,6 +161,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=smile language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('stareyes').onclick = function(){
@@ -162,6 +169,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=stareyes language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('thinking').onclick = function(){
@@ -169,6 +177,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=thinking language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 
 		document.getElementById('upsidedown').onclick = function(){
@@ -176,6 +185,7 @@
 			xhttp.open("POST", url, true);
 			xhttp.setRequestHeader("Authorization", splunkToken);
 			xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" mood=upsidedown language="'+navigator.language+'"');
+			alert("Mood submitted!");
 		}
 		document.getElementById('submit').onclick = function(){
 			var message = document.getElementById("message").value;
@@ -185,6 +195,7 @@
 				xhttp.setRequestHeader("Authorization", splunkToken);
 				xhttp.send('userSession="'+sessionStorage.getItem("SessionName")+'" message="'+message+'" language="'+navigator.language+'"');
 				document.getElementById("message").value = '';
+				alert("Message submitted!");
 			}
 		}
 	</script>
