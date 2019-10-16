@@ -48,7 +48,7 @@
 	<a href="https://twitter.com/intent/tweet?button_hashtag=splunkomania&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false" data-size="large">Tweet #splunkomania</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<p>or</p>
 <div class="input-group mb-3 offset-md-3 col-md-6 " >
-  <input id="message" type="text" class="form-control" placeholder="you can also just enter your message here :)" aria-label="you can also just enter your message here :)" aria-describedby="basic-addon2">
+  <input id="message" type="text" class="form-control" placeholder="enter your message here..." aria-label="you can also just enter your message here :)" aria-describedby="basic-addon2">
   <div class="input-group-append">
     <button id="submit" class="btn btn-outline-secondary" type="button">Submit</button>
   </div>
@@ -56,7 +56,6 @@
   </main>
 	<script>
 		var splunkToken = "Splunk 31af3892-a22b-41d1-9d13-1f83522a2bb1";
-		// var url = "https://mavericks.datainsights.swisscom.com:8088/services/collector/raw"
 		var url = "http://185.207.213.68:8088/services/collector/raw"
 		var sessionToken = function() {
 			return Math.random().toString(36).substr(2);
@@ -67,6 +66,9 @@
 		}
 		else {
 			sessionStorage.SessionName = prompt("Please enter a username:");
+			if (sessionStorage.getItem("SessionName") == "null") {
+				sessionStorage.SessionName = sessionToken();
+			}
 			document.getElementById("welcome").innerHTML ="Hi " + sessionStorage.getItem("SessionName") + ", welcome to #splunkomania!";
 		}
 		
