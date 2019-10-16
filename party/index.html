@@ -16,12 +16,12 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
-      <h3 class="masthead-brand">#splunkomania</h3>
+      <h1 class="cover-heading" id="welcome"></h1>
     </div>
   </header>
 
   <main role="main" class="inner cover "">
-    <h1 class="cover-heading">Order your Drink!</h1>
+    <h3 class="masthead-brand">Order some Drinks:</h3>
     <p class="lead">Click on or tap any of the cards below to order your virtual drink @ #splunkomania.</p>
 	<p class="lead">
       <button id="beer" class="btn btn-lg btn-secondary"><img src="beer.png"/ height="100px"><br>Beer</button>
@@ -30,7 +30,7 @@
       <button id="water" class="btn btn-lg btn-secondary"><img src="water.png"/ height="100px"><br>Water</button>
     </p>
     <p>&nbsp;</p>
-    <h1 class="cover-heading">Select your Mood!</h1>
+    <h3 class="masthead-brand">Select your Mood:</h3>
     <p class="lead">Click on or tap any of the emojis below to submit your current mood @ #splunkomania.</p>
     <button id="dizzy" class="btn" style="width: 120px;"><img src="dizzy.png"/ height="100px"></button>
     <button id="drunk" class="btn" style="width: 120px;"><img src="drunk.png"/ height="100px"></button>
@@ -43,7 +43,7 @@
     <button id="stareyes" class="btn" style="width: 120px;"><img src="stareyes.png"/ height="100px"></button>
     <button id="thinking" class="btn" style="width: 120px;"><img src="thinking.png"/ height="100px"></button>
     <p>&nbsp;</p>
-    <h1 class="cover-heading">Share your thoughts!</h1>
+    <h3 class="masthead-brand">Share your thoughts!</h3>
     <p class="lead">Tweet using the #splunkomania hashtag or enter your thoughts below to share them with the crowd.</p>
 	<a href="https://twitter.com/intent/tweet?button_hashtag=splunkomania&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false" data-size="large">Tweet #splunkomania</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<p>or</p>
@@ -63,10 +63,11 @@
 		};
 		
 		if (sessionStorage.getItem("SessionName")) {
-			var session = sessionStorage.getItem("SessionName")
+			document.getElementById("welcome").innerHTML ="Hi " + sessionStorage.getItem("SessionName") + ", welcome to #splunkomania!";
 		}
 		else {
-			var session = sessionStorage.SessionName = sessionToken();
+			sessionStorage.SessionName = prompt("Please enter a username:");
+			document.getElementById("welcome").innerHTML ="Hi " + sessionStorage.getItem("SessionName") + ", welcome to #splunkomania!";
 		}
 		
 		document.getElementById('beer').onclick = function(){
@@ -201,7 +202,7 @@
 	</script>
   <footer class="mastfoot mt-auto">
     <div class="inner">
-      <p>#splunkomania Party Dashboard input page for Splunk .conf by DATA Mavericks.</p>
+      <p>#splunkomania Party Dashboard by <a href="https://www.datamavericks.com">DATA Mavericks</a>.</p>
     </div>
   </footer>
 </div>
